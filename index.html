@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script defer src="./main.js"></script>
+		<title>Prueba Técnica</title>
+	</head>
+	<body>
+		<main>
+			<h1>Control de productos</h1>
+			<button type="button" onclick="openForm()" class="button">
+				Agregar producto
+			</button>
+			<section class="container">
+				<form class="form">
+					<label for="code">Código</label>
+					<input type="text" id="code" />
+					<label for="name">Nombre</label>
+					<input type="text" id="name" />
+					<label for="color">Color</label>
+					<input type="text" id="color" />
+					<label for="weight">Peso(kg)</label>
+					<input type="number" id="weight" />
+					<label for="amount">Cantidad</label>
+					<input type="number" id="amount" />
+					<div id="error-message1" class="error">
+						Todos los campos son obligatorios
+					</div>
+					<div id="error-message2" class="error">
+						El producto ya existe. Actualicelo en la tabla
+					</div>
+					<div class="buttons-container">
+						<button
+							type="button"
+							class="button addButton"
+							onclick="addProduct()"
+						>
+							Agregar
+						</button>
+						<button
+							type="button"
+							class="button updateButton"
+							onclick="updateProduct()"
+						>
+							Actualizar
+						</button>
+						<button
+							type="button"
+							onclick="cancelAction()"
+							class="button button--danger"
+						>
+							Cancelar
+						</button>
+					</div>
+				</form>
+				<article class="table-container">
+					<h2>Productos actuales:</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Código</th>
+								<th>Nombre</th>
+								<th>Color</th>
+								<th>Peso (Kg)</th>
+								<th>Cantidad</th>
+								<th>Editar</th>
+								<th>Eliminar</th>
+							</tr>
+						</thead>
+						<tbody id="tbody"></tbody>
+					</table>
+				</article>
+				<article>
+					<h1>Total de productos:</h1>
+					<button type="button" onclick="getAmount()" class="button">
+						Consultar cantidad
+					</button>
+					<h2 id="totalContainer"></h2>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>
